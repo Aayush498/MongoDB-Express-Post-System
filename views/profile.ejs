@@ -11,8 +11,13 @@
         <div class="w-full flex justify-end">
             <a class="bg-red-500 rounded-md px-3 py-2 text-sm mb-5 inline-block" href="/logout">Logout</a>
         </div>
-        <h3 class="text-3xl mb-5"><span class="font-light">Hello</span> <%= user.name %> 👋🏻</h3>
-        <h5 class="mb-5">You can create a new post.</h5>
+        <div class="flex items-start gap-3">
+                <div class="w-10 h-10  rounded-md overflow-hidden">
+                    <img class="w-full h-full object-cover" src="/images/uploads/<%= user.profilepic%>" alt="">
+                </div>
+                <h3 class="text-3xl mb-5"><span class="font-light">Hello</span> <%= user.name %> 👋🏻</h3>
+        </div>
+        <h5 class="mb-5 mt-3">You can create a new post.</h5>
         <form method="post" action="/post">
             <textarea placeholder="What's on your mind?" class="block p-3 w-1/3 outline-none resize-none border-2 bg-transparent rounded-md border-zinc-800" name="content"></textarea>
             <input class="w-40 px-3 py-2 bg-blue-500 block rounded-md mt-2" type="submit" value="Create new post">
